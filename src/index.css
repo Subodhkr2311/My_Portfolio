@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #F8F8FA;
+    color: #111114;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    @apply bg-[#F8F8FA] text-[#111114] antialiased selection:bg-[#D0F030] selection:text-black;
+  }
+
+  /* Refined, Minimalist Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F2F2F5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4D4DC;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F04400;
+  }
+}
+
+/* Subtle Minimalist Mesh Dots */
+.bg-subtle-dots {
+  background-image: radial-gradient(#D4D4DC 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  /* Minimalist Card Surfaces */
+  .card-clean {
+    @apply bg-white border border-[#E5E5EB] rounded-2xl shadow-soft hover:shadow-soft-md transition-all duration-200;
+  }
+
+  /* Action Buttons */
+  .btn-fiery {
+    @apply inline-flex items-center justify-center gap-2 bg-[#F04400] hover:bg-[#FF5714] text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-sm hover:shadow-fiery-glow transition-all duration-150 active:scale-[0.98];
+  }
+
+  .btn-neon {
+    @apply inline-flex items-center justify-center gap-2 bg-[#D0F030] hover:bg-[#DCF74D] text-black font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-sm hover:shadow-neon-glow transition-all duration-150 active:scale-[0.98];
+  }
+
+  .btn-sunshine {
+    @apply inline-flex items-center justify-center gap-2 bg-[#FFD91A] hover:bg-[#FFE24A] text-black font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-sm hover:shadow-sunshine-glow transition-all duration-150 active:scale-[0.98];
+  }
+
+  .btn-jet {
+    @apply inline-flex items-center justify-center gap-2 bg-[#000000] hover:bg-[#1A1A1E] text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-sm transition-all duration-150 active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F2F2F5] text-[#111114] font-medium text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-[#E5E5EB] hover:border-[#D4D4DC] transition-all duration-150 active:scale-[0.98];
+  }
+
+  /* Color-Coded Minimalist Tag Badges */
+  .badge-fiery {
+    @apply inline-flex items-center gap-1.5 bg-[#FFF1EC] text-[#D03B00] border border-[#FFD5C7] px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold;
+  }
+
+  .badge-sunshine {
+    @apply inline-flex items-center gap-1.5 bg-[#FFFDEB] text-[#998000] border border-[#FFEBA4] px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold;
+  }
+
+  .badge-neon {
+    @apply inline-flex items-center gap-1.5 bg-[#F4FCD9] text-[#526604] border border-[#DFF58F] px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold;
+  }
+
+  .badge-jet {
+    @apply inline-flex items-center gap-1.5 bg-[#121216] text-white border border-[#24242A] px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold;
+  }
+}
